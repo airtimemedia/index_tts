@@ -1,7 +1,8 @@
 import os
 from subprocess import CalledProcessError
+from tts.utils import get_user_data_dir
 
-os.environ['HF_HUB_CACHE'] = './checkpoints/hf_cache'
+os.environ['HF_HUB_CACHE'] = get_user_data_dir("tts_cache")
 import json
 import re
 import time
