@@ -8,7 +8,7 @@ import numpy as np
 import torch.nn as nn
 import math
 from einops import rearrange
-from indextts.utils.maskgct.models.tts.maskgct.llama_nar import DiffLlama
+from projects.index_tts.indextts.utils.maskgct.models.tts.maskgct.llama_nar import DiffLlama
 
 
 def top_k(logits, thres=0.9):

@@ -246,7 +246,7 @@ PYTHONPATH="$PYTHONPATH:." uv run indextts/infer_v2.py
 1. 单一参考音频（音色克隆）：
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "Translate for me, what is a surprise!"
 tts.infer(spk_audio_prompt='examples/voice_01.wav', text=text, output_path="gen.wav", verbose=True)
@@ -255,7 +255,7 @@ tts.infer(spk_audio_prompt='examples/voice_01.wav', text=text, output_path="gen.
 2. 指定情感参考音频：
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "酒楼丧尽天良，开始借机竞拍房间，哎，一群蠢货。"
 tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.wav", emo_audio_prompt="examples/emo_sad.wav", verbose=True)
@@ -264,7 +264,7 @@ tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.
 3. 可调节情感参考音频的权重（`emo_alpha`，范围0.0-1.0，默认1.0）：
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "酒楼丧尽天良，开始借机竞拍房间，哎，一群蠢货。"
 tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.wav", emo_audio_prompt="examples/emo_sad.wav", emo_alpha=0.9, verbose=True)
@@ -276,7 +276,7 @@ tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.
 > 开启随机采样会降低音色的还原度。
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "哇塞！这个爆率也太高了！欧皇附体了！"
 tts.infer(spk_audio_prompt='examples/voice_10.wav', text=text, output_path="gen.wav", emo_vector=[0, 0, 0, 0, 0, 0, 0.45, 0], use_random=False, verbose=True)
@@ -285,7 +285,7 @@ tts.infer(spk_audio_prompt='examples/voice_10.wav', text=text, output_path="gen.
 5. 可用`use_emo_text`根据文本自动生成情感向量，可用`use_random`开启随机情感采样：
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "快躲起来！是他要来了！他要来抓我们了！"
 tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.wav", emo_alpha=0.6, use_emo_text=True, use_random=False, verbose=True)
@@ -294,7 +294,7 @@ tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.
 6. 可直接指定情感文本描述（`emo_text`），实现文本与情感分离控制：
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "快躲起来！是他要来了！他要来抓我们了！"
 emo_text = "你吓死我了！你是鬼吗？"
@@ -319,7 +319,7 @@ tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.
 如果需要使用旧的IndexTTS1.5模型，可以import旧模块：
 
 ```python
-from indextts.infer import IndexTTS
+from projects.index_tts.indextts.infer import projects.index_tts.indextts
 tts = IndexTTS(model_dir="checkpoints",cfg_path="checkpoints/config.yaml")
 voice = "examples/voice_07.wav"
 text = "大家好，我现在正在bilibili 体验 ai 科技，说实话，来之前我绝对想不到！AI技术已经发展到这样匪夷所思的地步了！比如说，现在正在说话的其实是B站为我现场复刻的数字分身，简直就是平行宇宙的另一个我了。如果大家也想体验更多深入的AIGC功能，可以访问 bilibili studio，相信我，你们也会吃惊的。"

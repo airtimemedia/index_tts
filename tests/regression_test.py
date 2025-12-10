@@ -1,4 +1,4 @@
-from indextts.infer import IndexTTS
+from projects.index_tts.indextts.infer import projects.index_tts.indextts
 
 if __name__ == "__main__":
     prompt_wav="tests/sample_prompt.wav"

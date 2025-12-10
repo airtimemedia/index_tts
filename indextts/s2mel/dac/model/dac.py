@@ -9,10 +9,10 @@ from audiotools.ml import BaseModel
 from torch import nn
 
 from .base import CodecMixin
-from indextts.s2mel.dac.nn.layers import Snake1d
-from indextts.s2mel.dac.nn.layers import WNConv1d
-from indextts.s2mel.dac.nn.layers import WNConvTranspose1d
-from indextts.s2mel.dac.nn.quantize import ResidualVectorQuantize
+from projects.index_tts.indextts.s2mel.dac.nn.layers import Snake1d
+from projects.index_tts.indextts.s2mel.dac.nn.layers import WNConv1d
+from projects.index_tts.indextts.s2mel.dac.nn.layers import WNConvTranspose1d
+from projects.index_tts.indextts.s2mel.dac.nn.quantize import ResidualVectorQuantize
 from .encodec import SConv1d, SConvTranspose1d, SLSTM
 
 

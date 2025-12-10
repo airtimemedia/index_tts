@@ -48,7 +48,7 @@ for file in [
         sys.exit(1)
 
 import gradio as gr
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 from tools.i18n.i18n import I18nAuto
 
 i18n = I18nAuto(language="Auto")

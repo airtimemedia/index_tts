@@ -1,7 +1,7 @@
 import torch
 import torchaudio
-from indextts.infer import IndexTTS
-from indextts.utils.feature_extractors import MelSpectrogramFeatures
+from projects.index_tts.indextts.infer import projects.index_tts.indextts
+from projects.index_tts.indextts.utils.feature_extractors import MelSpectrogramFeatures
 from torch.nn import functional as F
 
 if __name__ == "__main__":

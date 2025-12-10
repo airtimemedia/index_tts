@@ -1,7 +1,7 @@
 import torch
 import torchaudio
 from torch import nn
-from indextts.utils.common import safe_log
+from projects.index_tts.indextts.utils.common import safe_log
 
 
 class FeatureExtractor(nn.Module):

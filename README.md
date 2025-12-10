@@ -304,7 +304,7 @@ Here are several examples of how to use IndexTTS2 in your own scripts:
 1. Synthesize new speech with a single reference audio file (voice cloning):
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "Translate for me, what is a surprise!"
 tts.infer(spk_audio_prompt='examples/voice_01.wav', text=text, output_path="gen.wav", verbose=True)
@@ -313,7 +313,7 @@ tts.infer(spk_audio_prompt='examples/voice_01.wav', text=text, output_path="gen.
 2. Using a separate, emotional reference audio file to condition the speech synthesis:
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "酒楼丧尽天良，开始借机竞拍房间，哎，一群蠢货。"
 tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.wav", emo_audio_prompt="examples/emo_sad.wav", verbose=True)
@@ -324,7 +324,7 @@ tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.
    Valid range is `0.0 - 1.0`, and the default value is `1.0` (100%):
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "酒楼丧尽天良，开始借机竞拍房间，哎，一群蠢货。"
 tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.wav", emo_audio_prompt="examples/emo_sad.wav", emo_alpha=0.9, verbose=True)
@@ -342,7 +342,7 @@ tts.infer(spk_audio_prompt='examples/voice_07.wav', text=text, output_path="gen.
 > synthesis.
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "哇塞！这个爆率也太高了！欧皇附体了！"
 tts.infer(spk_audio_prompt='examples/voice_10.wav', text=text, output_path="gen.wav", emo_vector=[0, 0, 0, 0, 0, 0, 0.45, 0], use_random=False, verbose=True)
@@ -357,7 +357,7 @@ tts.infer(spk_audio_prompt='examples/voice_10.wav', text=text, output_path="gen.
    `True` enables randomness):
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "快躲起来！是他要来了！他要来抓我们了！"
 tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.wav", emo_alpha=0.6, use_emo_text=True, use_random=False, verbose=True)
@@ -369,7 +369,7 @@ tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.
    script and the text emotion description:
 
 ```python
-from indextts.infer_v2 import IndexTTS2
+from projects.index_tts.indextts.infer_v2 import projects.index_tts.indextts2
 tts = IndexTTS2(cfg_path="checkpoints/config.yaml", model_dir="checkpoints", use_fp16=False, use_cuda_kernel=False, use_deepspeed=False)
 text = "快躲起来！是他要来了！他要来抓我们了！"
 emo_text = "你吓死我了！你是鬼吗？"
@@ -394,7 +394,7 @@ tts.infer(spk_audio_prompt='examples/voice_12.wav', text=text, output_path="gen.
 You can also use our previous IndexTTS1 model by importing a different module:
 
 ```python
-from indextts.infer import IndexTTS
+from projects.index_tts.indextts.infer import projects.index_tts.indextts
 tts = IndexTTS(model_dir="checkpoints",cfg_path="checkpoints/config.yaml")
 voice = "examples/voice_07.wav"
 text = "大家好，我现在正在bilibili 体验 ai 科技，说实话，来之前我绝对想不到！AI技术已经发展到这样匪夷所思的地步了！比如说，现在正在说话的其实是B站为我现场复刻的数字分身，简直就是平行宇宙的另一个我了。如果大家也想体验更多深入的AIGC功能，可以访问 bilibili studio，相信我，你们也会吃惊的。"

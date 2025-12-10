@@ -17,15 +17,15 @@ warnings.filterwarnings("ignore", category=UserWarning)
 
 from omegaconf import OmegaConf
 
-from indextts.gpt.model_v2 import UnifiedVoice
-from indextts.utils.maskgct_utils import build_semantic_model, build_semantic_codec
-from indextts.utils.checkpoint import load_checkpoint
-from indextts.utils.front import TextNormalizer, TextTokenizer
+from projects.index_tts.indextts.gpt.model_v2 import UnifiedVoice
+from projects.index_tts.indextts.utils.maskgct_utils import build_semantic_model, build_semantic_codec
+from projects.index_tts.indextts.utils.checkpoint import load_checkpoint
+from projects.index_tts.indextts.utils.front import TextNormalizer, TextTokenizer
 
-from indextts.s2mel.modules.commons import load_checkpoint2, MyModel
-from indextts.s2mel.modules.bigvgan import bigvgan
-from indextts.s2mel.modules.campplus.DTDNN import CAMPPlus
-from indextts.s2mel.modules.audio import mel_spectrogram
+from projects.index_tts.indextts.s2mel.modules.commons import load_checkpoint2, MyModel
+from projects.index_tts.indextts.s2mel.modules.bigvgan import bigvgan
+from projects.index_tts.indextts.s2mel.modules.campplus.DTDNN import CAMPPlus
+from projects.index_tts.indextts.s2mel.modules.audio import mel_spectrogram
 
 from transformers import AutoTokenizer
 from modelscope import AutoModelForCausalLM
@@ -104,7 +104,7 @@ class IndexTTS2:
         if self.use_cuda_kernel:
             # preload the CUDA kernel for BigVGAN
             try:
-                from indextts.s2mel.modules.bigvgan.alias_free_activation.cuda import activation1d
+                from projects.index_tts.indextts.s2mel.modules.bigvgan.alias_free_activation.cuda import activation1d
 
                 print(">> Preload custom CUDA kernel for BigVGAN", activation1d.anti_alias_activation_cuda)
             except Exception as e:
@@ -831,11 +831,11 @@ class QwenEmotion:
 
 
 if __name__ == "__main__":
-    prompt_wav = "examples/voice_01.wav"
+    prompt_wav = "/workspace/TTS-team/projects/index_tts/examples/voice_01.wav"
     text = '欢迎大家来体验indextts2，并给予我们意见与反馈，谢谢大家。'
     tts = IndexTTS2(
-        cfg_path="checkpoints/config.yaml", 
-        model_dir="checkpoints", 
+        cfg_path="/workspace/TTS-team/projects/index_tts/checkpoints/config.yaml", 
+        model_dir="/workspace/TTS-team/projects/index_tts/checkpoints", 
         use_cuda_kernel=False,
         use_torch_compile=True
     )

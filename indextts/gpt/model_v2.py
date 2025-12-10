@@ -6,17 +6,17 @@ import torch.nn.functional as F
 
 import transformers
 from transformers import GPT2Config, LogitsProcessorList
-from indextts.gpt.transformers_gpt2 import GPT2PreTrainedModel, GPT2Model
+from projects.index_tts.indextts.gpt.transformers_gpt2 import GPT2PreTrainedModel, GPT2Model
 
 # from transformers import GPT2Config, GPT2PreTrainedModel, LogitsProcessorList
 from transformers.modeling_outputs import CausalLMOutputWithCrossAttentions
 from transformers.utils.model_parallel_utils import (assert_device_map,
                                                      get_device_map)
 
-from indextts.gpt.conformer_encoder import ConformerEncoder
-from indextts.gpt.perceiver import PerceiverResampler
-from indextts.utils.arch_util import AttentionBlock
-from indextts.utils.typical_sampling import TypicalLogitsWarper
+from projects.index_tts.indextts.gpt.conformer_encoder import ConformerEncoder
+from projects.index_tts.indextts.gpt.perceiver import PerceiverResampler
+from projects.index_tts.indextts.utils.arch_util import AttentionBlock
+from projects.index_tts.indextts.utils.typical_sampling import TypicalLogitsWarper
 
 
 def null_position_embeddings(range, dim):
@@ -432,7 +432,7 @@ class UnifiedVoice(nn.Module):
             except ImportError:
                 raise ImportError("flash_attn is required for acceleration but not installed. Please install from https://github.com/Dao-AILab/flash-attention/releases/")
 
-            from indextts.accel import GPT2AccelModel, AccelInferenceEngine
+            from projects.index_tts.indextts.accel import GPT2AccelModel, AccelInferenceEngine
 
             # Create accel model
             accel_gpt = GPT2AccelModel(gpt_config)

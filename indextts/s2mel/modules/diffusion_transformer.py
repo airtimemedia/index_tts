@@ -2,9 +2,9 @@ import torch
 from torch import nn
 import math
 
-from indextts.s2mel.modules.gpt_fast.model import ModelArgs, Transformer
-from indextts.s2mel.modules.wavenet import WN
-from indextts.s2mel.modules.commons import sequence_mask
+from projects.index_tts.indextts.s2mel.modules.gpt_fast.model import ModelArgs, Transformer
+from projects.index_tts.indextts.s2mel.modules.wavenet import WN
+from projects.index_tts.indextts.s2mel.modules.commons import sequence_mask
 
 from torch.nn.utils import weight_norm
 
