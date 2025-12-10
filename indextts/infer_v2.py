@@ -2,7 +2,7 @@ import os
 from subprocess import CalledProcessError
 from tts.utils import get_user_data_dir
 
-os.environ['HF_HUB_CACHE'] = get_user_data_dir("tts_cache")
+os.environ['HF_HUB_CACHE'] = str(get_user_data_dir("tts_cache"))
 import json
 import re
 import time
@@ -838,7 +838,7 @@ if __name__ == "__main__":
         cfg_path="/workspace/TTS-team/projects/index_tts/checkpoints/config.yaml", 
         model_dir="/workspace/TTS-team/projects/index_tts/checkpoints", 
         use_cuda_kernel=False,
-        use_torch_compile=True
+        use_torch_compile=False
     )
     tts.infer(spk_audio_prompt=prompt_wav, text=text, output_path="gen.wav", verbose=True)
     char_size = 5
